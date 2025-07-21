@@ -8,14 +8,14 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                   gv = load "script.groovy"
+                   echo "Hello form initialization stage"
                 }
             }
         }
         stage("build") {
             steps {
                 script {
-                    gv.buildApp()
+                  echo "Building the application with version"
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             }
             steps {
                 script {
-                    gv.testApp()
+                    echo "running tests"
                 }
             }
         }
